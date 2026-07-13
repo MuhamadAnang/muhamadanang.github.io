@@ -1,24 +1,24 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Muhamad",
+  lastName: "Anang",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
+  role: "Software Developer",
+  avatar: "/images/profile.webp",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English & Indonesia", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Subscribe to {person.lastName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      I occasionally write about design, technology, and share thoughts on the
+      intersection of creativity and engineering.
     </>
   ),
 };
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/MuhamadAnang",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/maafin/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:ananghusnul10@gmail.com",
   },
 ];
 
@@ -52,11 +52,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>"partner in all your needs."</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      Software Developer | Designer | Editor | Creative Content Creator
+      <br /> — ready to bring your ideas to life.
     </>
   ),
 };
@@ -81,9 +81,16 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I'm a web developer who grew into a fullstack role using Laravel, and
+        now I'm diving deeper into front-end development with a focus on React.
+        Along the way, I also gained experience in mobile app development,
+        expanding my passion for building seamless digital experiences across
+        platforms. My love for the creative digital industry led me to sharpen
+        my skills in graphic design, as well as photo and video editing.
+        Traveling has fueled my love for photography and videography, giving me
+        a fresh and creative perspective. With a love for building connections
+        and working with people, I’ve brought all these skills together into the
+        freelance services that I offer to this day.
       </>
     ),
   },
@@ -92,17 +99,19 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "IDETAMA(PT Inti Daya Energitama)",
+        timeframe: "2025 - Present",
+        role: "Software Developer Internship",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            As a Software Developer Intern, I focus on building and implementing
+            web projects, specializing in front-end development.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Working primarily with React, I translate UI/UX designs into fully
+            functional and responsive user interfaces. I ensure that each
+            application aligns closely with the design vision, delivering a
+            seamless and engaging experience for users.
           </>,
         ],
         images: [
@@ -116,17 +125,40 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Software Developer Freelance",
+        timeframe: "2022 - Present",
+        role: "UI/UX Designer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            As a freelance developer, I took on diverse projects — from building
+            web profiles and management systems to designing sleek mobile apps
+            powered by machine learning and face recognition.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            With a flexible skill set across Laravel, Python, Flutter, and
+            Figma, I adapted to each project's needs, whether coding, designing,
+            or both. Every project was a new learning adventure that helped me
+            level up while delivering real results for my clients.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Creative Content Creator Freelance",
+        timeframe: "2018 - Present",
+        role: "Graphic Designer, Fotographer, Videgrapher, and Editor",
+        achievements: [
+          <>
+            I've been creating content since 2018, helping brands, small
+            businesses, and personal projects bring their stories to life. From
+            shooting product photos, pre-weddings, and travel adventures to
+            designing mockups, banners, and brand assets 
+          </>,
+          <>
+            — I love mixing
+            creativity and strategy. I work with tools like Adobe Premiere,
+            Photoshop, Lightroom, CorelDRAW, Canva, and Capcut to craft visuals
+            that connect and leave a mark.
           </>,
         ],
         images: [],
@@ -138,12 +170,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "State Polytechnic of Malang",
+        description: <>Studied Informatics Engineering.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Workshop Riset Informatika",
+        description: <>Studied research in the field of informatics.</>,
       },
     ],
   },
@@ -153,7 +185,9 @@ const about = {
     skills: [
       {
         title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        description: (
+          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [
           {
@@ -171,8 +205,55 @@ const about = {
         ],
       },
       {
+        title: "CorelDraw",
+        description: (
+          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+        ),
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "React.js",
+        description: (
+          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+        ),
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
         title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        description: (
+          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+        ),
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Laravel",
+        description: (
+          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+        ),
         // optional: leave the array empty if you don't want to display images
         images: [
           {
