@@ -7,7 +7,7 @@ import { person, work } from "@/app/resources/content";
 export async function generateMetadata() {
   const title = work.title;
   const description = work.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = `https://${baseURL}/images/cover.png`;
 
   return {
     title,
@@ -48,7 +48,7 @@ export default function Work() {
             headline: work.title,
             description: work.description,
             url: `https://${baseURL}/projects`,
-            image: `${baseURL}/og?title=Design%20Projects`,
+            image: `https://${baseURL}/images/cover.png`,
             author: {
               "@type": "Person",
               name: person.name,

@@ -1,4 +1,4 @@
-const baseURL = "demo.magic-portfolio.com";
+const baseURL = "muhamadanang.github.io";
 
 const routes = {
   "/": true,
@@ -8,11 +8,9 @@ const routes = {
   "/gallery": true,
 };
 
-// Enable password protection on selected routes
-// Set password in the .env file, refer to .env.example
-const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
+// Password protection needs a server, which GitHub Pages does not provide.
+// Kept as an empty object so existing imports keep working.
+const protectedRoutes = {};
 
 const style = {
   theme: "dark", // dark | light

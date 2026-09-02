@@ -7,7 +7,7 @@ import { blog, person, newsletter } from "@/app/resources/content";
 export async function generateMetadata() {
   const title = blog.title;
   const description = blog.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const ogImage = `https://${baseURL}/images/cover.png`;
 
   return {
     title,
@@ -46,7 +46,7 @@ export default function Blog() {
             headline: blog.title,
             description: blog.description,
             url: `https://${baseURL}/blog`,
-            image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
+            image: `https://${baseURL}/images/cover.png`,
             author: {
               "@type": "Person",
               name: person.name,

@@ -35,7 +35,7 @@ export function generateMetadata({ params: { slug } }: BlogParams) {
     image,
     team,
   } = post.metadata;
-  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
+  let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/images/cover.png`;
 
   return {
     title,
@@ -88,7 +88,7 @@ export default function Blog({ params }: BlogParams) {
             description: post.metadata.summary,
             image: post.metadata.image
               ? `https://${baseURL}${post.metadata.image}`
-              : `https://${baseURL}/og?title=${post.metadata.title}`,
+              : `https://${baseURL}/images/cover.png`,
             url: `https://${baseURL}/blog/${post.slug}`,
             author: {
               "@type": "Person",
