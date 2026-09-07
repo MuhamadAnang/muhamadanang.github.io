@@ -63,22 +63,22 @@ const home = {
     title: "Moments from my work",
     images: [
       {
-        src: "/images/projects/project-01/image-01.jpg",
+        src: "/images/gallery/RW.webp",
         alt: "Building a software project",
         orientation: "horizontal",
       },
       {
-        src: "/images/projects/project-01/image-02.jpg",
+        src: "/images/projects/wms2.png",
         alt: "Speaking as a presenter at an event",
         orientation: "horizontal",
       },
       {
-        src: "/images/projects/project-01/image-03.jpg",
+        src: "/images/projects/acp.png",
         alt: "In a meeting with a client",
         orientation: "horizontal",
       },
       {
-        src: "/images/gallery/img-01.jpg",
+        src: "/images/gallery/pict1.jpg",
         alt: "Photography work",
         orientation: "vertical",
       },
@@ -88,7 +88,7 @@ const home = {
         orientation: "vertical",
       },
       {
-        src: "/images/gallery/img-09.jpg",
+        src: "/images/gallery/img-09.png",
         alt: "Videography on location",
         orientation: "horizontal",
       },
