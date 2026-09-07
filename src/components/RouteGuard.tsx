@@ -14,15 +14,12 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   const isRouteEnabled = (): boolean => {
     if (!pathname) return false;
 
-    if (pathname in routes) {
-      return routes[pathname as keyof typeof routes];
-    }
+    // `trailingSlash: true` (needed for GitHub Pages) makes usePathname() return
+    // e.g. "/about/", so strip the trailing slash before matching route keys.
+    const normalized = pathname !== "/" ? pathname.replace(/\/$/, "") : pathname;
 
-    const dynamicRoutes = ["/blog", "/work"] as const;
-    for (const route of dynamicRoutes) {
-      if (pathname?.startsWith(route) && routes[route]) {
-        return true;
-      }
+    if (normalized in routes) {
+      return routes[normalized as keyof typeof routes];
     }
 
     return false;

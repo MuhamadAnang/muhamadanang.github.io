@@ -13,7 +13,7 @@ import {
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
 import styles from "@/components/about/about.module.scss";
-import { person, about, social } from "@/app/resources/content";
+import { person, about, social, experience } from "@/app/resources/content";
 
 export async function generateMetadata() {
   const title = about.title;
@@ -52,14 +52,14 @@ export default function About() {
       items: [],
     },
     {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.experiences.map((experience) => experience.company),
-    },
-    {
       title: about.studies.title,
       display: about.studies.display,
       items: about.studies.institutions.map((institution) => institution.name),
+    },
+    {
+      title: about.organizations.title,
+      display: about.organizations.display,
+      items: about.organizations.items.map((item) => item.name),
     },
     {
       title: about.technical.title,
@@ -80,13 +80,13 @@ export default function About() {
             jobTitle: person.role,
             description: about.intro.description,
             url: `https://${baseURL}/about`,
-            image: `${baseURL}/images/${person.avatar}`,
+            image: `https://${baseURL}${person.avatar}`,
             sameAs: social
               .filter((item) => item.link && !item.link.startsWith("mailto:")) // Filter out empty links and email links
               .map((item) => item.link),
             worksFor: {
               "@type": "Organization",
-              name: about.work.experiences[0].company || "",
+              name: experience.positions[0]?.company || "",
             },
           }),
         }}
@@ -117,7 +117,7 @@ export default function About() {
             <Avatar src={person.avatar} size="xl" />
             <Flex gap="8" vertical="center">
               <Icon onBackground="accent-weak" name="globe" />
-              {person.location}
+              {person.locationLabel}
             </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
@@ -209,68 +209,6 @@ export default function About() {
             </Column>
           )}
 
-          {about.work.display && (
-            <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
-              </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
-                  <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={experience.company} variant="heading-strong-l">
-                        {experience.company}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {experience.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {experience.role}
-                    </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
-                    {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
-                        {experience.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <SmartImage
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Column>
-                ))}
-              </Column>
-            </>
-          )}
-
           {about.studies.display && (
             <>
               <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
@@ -284,6 +222,39 @@ export default function About() {
                     </Text>
                     <Text variant="heading-default-xs" onBackground="neutral-weak">
                       {institution.description}
+                    </Text>
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.organizations.display && (
+            <>
+              <Heading
+                as="h2"
+                id={about.organizations.title}
+                variant="display-strong-s"
+                marginBottom="m"
+              >
+                {about.organizations.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.organizations.items.map((item, index) => (
+                  <Column key={`${item.name}-${index}`} fillWidth>
+                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
+                      <Text id={item.name} variant="heading-strong-l">
+                        {item.name}
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {item.timeframe}
+                      </Text>
+                    </Flex>
+                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
+                      {item.role}
+                    </Text>
+                    <Text variant="body-default-m" onBackground="neutral-weak">
+                      {item.description}
                     </Text>
                   </Column>
                 ))}

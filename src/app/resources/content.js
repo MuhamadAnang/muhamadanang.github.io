@@ -8,19 +8,11 @@ const person = {
   },
   role: "Software Developer",
   avatar: "/images/profile.webp",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English & Indonesia", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
-};
-
-const newsletter = {
-  display: true,
-  title: <>Subscribe to {person.lastName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the
-      intersection of creativity and engineering.
-    </>
-  ),
+  // IANA time zone identifier — used for the clock in the header.
+  location: "Asia/Jakarta",
+  // Human-readable location shown around the site.
+  locationLabel: "Malang, East Java, Indonesia",
+  languages: ["English", "Bahasa Indonesia"],
 };
 
 const social = [
@@ -37,11 +29,6 @@ const social = [
     link: "https://www.linkedin.com/in/maafin/",
   },
   {
-    name: "X",
-    icon: "x",
-    link: "",
-  },
-  {
     name: "Email",
     icon: "email",
     link: "mailto:ananghusnul10@gmail.com",
@@ -51,20 +38,68 @@ const social = [
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>"partner in all your needs."</>,
+  description:
+    "Portfolio of Muhamad Anang — software developer, photographer / videographer, and video editor based in Malang, East Java, Indonesia.",
+  headline: <>Software developer, photographer & video editor</>,
   subline: (
     <>
-      Software Developer | Designer | Editor | Creative Content Creator
-      <br /> — ready to bring your ideas to life.
+      I'm Anang, a software developer based in Malang, East Java, Indonesia.
+      Alongside building software, I freelance as a photographer / videographer
+      and a video editor — bringing ideas to life both in code and on screen.
     </>
   ),
+  // Short bullet points shown under the intro on the home page.
+  highlights: [
+    "Fullstack developer, front-end oriented (React / Next.js)",
+    "Freelance photographer & videographer",
+    "Video editor & creative content creator",
+    "Based in Malang, East Java, Indonesia",
+  ],
+  // Documentation strip on the home page.
+  // TODO: replace these with your own photos (programming, speaking as a
+  // presenter, client meetings, photography results, ...). Drop the files in
+  // /public/images and update the `src` paths below.
+  showcase: {
+    title: "Moments from my work",
+    images: [
+      {
+        src: "/images/projects/project-01/image-01.jpg",
+        alt: "Building a software project",
+        orientation: "horizontal",
+      },
+      {
+        src: "/images/projects/project-01/image-02.jpg",
+        alt: "Speaking as a presenter at an event",
+        orientation: "horizontal",
+      },
+      {
+        src: "/images/projects/project-01/image-03.jpg",
+        alt: "In a meeting with a client",
+        orientation: "horizontal",
+      },
+      {
+        src: "/images/gallery/img-01.jpg",
+        alt: "Photography work",
+        orientation: "vertical",
+      },
+      {
+        src: "/images/gallery/img-06.jpg",
+        alt: "Photography work",
+        orientation: "vertical",
+      },
+      {
+        src: "/images/gallery/img-09.jpg",
+        alt: "Videography on location",
+        orientation: "horizontal",
+      },
+    ],
+  },
 };
 
 const about = {
   label: "About",
   title: "About me",
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.locationLabel}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -73,7 +108,7 @@ const about = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -81,92 +116,19 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        I'm a web developer who grew into a fullstack role using Laravel, and
-        now I'm diving deeper into front-end development with a focus on React.
-        Along the way, I also gained experience in mobile app development,
-        expanding my passion for building seamless digital experiences across
-        platforms. My love for the creative digital industry led me to sharpen
-        my skills in graphic design, as well as photo and video editing.
-        Traveling has fueled my love for photography and videography, giving me
-        a fresh and creative perspective. With a love for building connections
-        and working with people, I’ve brought all these skills together into the
-        freelance services that I offer to this day.
+        I'm Muhamad Anang, a software developer from Malang, East Java,
+        Indonesia. I started out in web development, grew into a fullstack role
+        with Laravel, and now focus on front-end engineering with React and
+        Next.js. Along the way I also picked up mobile development with Flutter.
+        My interest in the creative digital industry led me to graphic design and
+        photo / video editing, and traveling turned photography and videography
+        into a serious craft. Today I combine all of this into the freelance
+        services I offer.
       </>
     ),
   },
-  work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
-    experiences: [
-      {
-        company: "IDETAMA(PT Inti Daya Energitama)",
-        timeframe: "2025 - Present",
-        role: "Software Developer Internship",
-        achievements: [
-          <>
-            As a Software Developer Intern, I focus on building and implementing
-            web projects, specializing in front-end development.
-          </>,
-          <>
-            Working primarily with React, I translate UI/UX designs into fully
-            functional and responsive user interfaces. I ensure that each
-            application aligns closely with the design vision, delivering a
-            seamless and engaging experience for users.
-          </>,
-        ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: "Software Developer Freelance",
-        timeframe: "2022 - Present",
-        role: "UI/UX Designer",
-        achievements: [
-          <>
-            As a freelance developer, I took on diverse projects — from building
-            web profiles and management systems to designing sleek mobile apps
-            powered by machine learning and face recognition.
-          </>,
-          <>
-            With a flexible skill set across Laravel, Python, Flutter, and
-            Figma, I adapted to each project's needs, whether coding, designing,
-            or both. Every project was a new learning adventure that helped me
-            level up while delivering real results for my clients.
-          </>,
-        ],
-        images: [],
-      },
-      {
-        company: "Creative Content Creator Freelance",
-        timeframe: "2018 - Present",
-        role: "Graphic Designer, Fotographer, Videgrapher, and Editor",
-        achievements: [
-          <>
-            I've been creating content since 2018, helping brands, small
-            businesses, and personal projects bring their stories to life. From
-            shooting product photos, pre-weddings, and travel adventures to
-            designing mockups, banners, and brand assets 
-          </>,
-          <>
-            — I love mixing
-            creativity and strategy. I work with tools like Adobe Premiere,
-            Photoshop, Lightroom, CorelDRAW, Canva, and Capcut to craft visuals
-            that connect and leave a mark.
-          </>,
-        ],
-        images: [],
-      },
-    ],
-  },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
@@ -175,119 +137,154 @@ const about = {
       },
       {
         name: "Workshop Riset Informatika",
-        description: <>Studied research in the field of informatics.</>,
+        description: <>Research training in the field of informatics.</>,
+      },
+      // TODO: add your senior high school / any other education here.
+    ],
+  },
+  organizations: {
+    display: true,
+    title: "Organizations & Activities",
+    // TODO: fill in with your real organizations, the roles you held, what you
+    // led, and the events / programs you took part in. Delete entries you
+    // don't need, or set display: false above to hide this whole section.
+    items: [
+      {
+        name: "TODO — organization name",
+        role: "TODO — your position (e.g. Head of Division)",
+        timeframe: "20XX – 20XX",
+        description: (
+          <>TODO — what you were responsible for and what you led.</>
+        ),
+      },
+      {
+        name: "TODO — committee / event",
+        role: "TODO — your role on the committee",
+        timeframe: "20XX",
+        description: <>TODO — the program you took part in and your contribution.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "React & Next.js",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Building responsive, accessible front-ends and turning UI/UX designs into production interfaces.</>
         ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "CorelDraw",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "React.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
         title: "Laravel",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        description: <>Designing and building fullstack web apps and management systems with PHP / Laravel.</>,
+        images: [],
+      },
+      {
+        title: "Flutter",
+        description: <>Cross-platform mobile apps, including projects with machine learning and face recognition.</>,
+        images: [],
+      },
+      {
+        title: "Figma",
+        description: <>UI/UX design and prototyping, from wireframes to handoff-ready screens.</>,
+        images: [],
+      },
+      {
+        title: "Adobe Premiere Pro & CapCut",
+        description: <>Video editing for brand content, events, travel, and social media.</>,
+        images: [],
+      },
+      {
+        title: "Lightroom, Photoshop & CorelDRAW",
+        description: <>Photo retouching, color grading, and graphic assets — banners, mockups, and brand kits.</>,
+        images: [],
       },
     ],
   },
 };
 
-const blog = {
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
-};
-
-const work = {
-  label: "Work",
-  title: "My projects",
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+const experience = {
+  label: "Experience",
+  title: "Experience",
+  description: `Roles and freelance work by ${person.name}`,
+  // TODO: double-check every timeframe below and replace the "20XX" placeholders
+  // with your real start / end dates.
+  positions: [
+    {
+      company: "Sinvitrix Labs",
+      role: "Fullstack Developer (Front-end oriented)",
+      timeframe: "2025 – Present",
+      location: "Remote",
+      link: "https://sinvitrixlabs.biz.id/",
+      linkLabel: "sinvitrixlabs.biz.id",
+      achievements: [
+        <>
+          Build and ship product features across the stack with a strong focus on
+          the front-end, using React and Next.js.
+        </>,
+        <>
+          Translate UI/UX designs into responsive, accessible interfaces and
+          collaborate with the team to keep the product consistent with the
+          design vision.
+        </>,
+      ],
+    },
+    {
+      company: "IDETAMA (PT Inti Daya Energitama)",
+      role: "Software Developer Intern",
+      timeframe: "2024 – 2025",
+      link: "https://idetama.id/",
+      linkLabel: "idetama.id",
+      achievements: [
+        <>
+          Worked on internal web projects, specializing in front-end development
+          with React.
+        </>,
+        <>
+          Turned UI/UX designs into functional, responsive user interfaces and
+          made sure each screen matched the intended design.
+        </>,
+      ],
+    },
+    {
+      company: "UD & Percetakan LKS",
+      role: "Warehouse Staff",
+      timeframe: "20XX – 20XX",
+      achievements: [
+        <>
+          Handled stock management, incoming and outgoing goods, and day-to-day
+          warehouse operations for the printing business.
+        </>,
+      ],
+    },
+    {
+      company: "Freelance",
+      role: "Software Developer · Designer · Video Editor · Photo / Videographer",
+      timeframe: "2018 – Present",
+      achievements: [
+        <>
+          Software development: web profiles, management systems, and mobile apps
+          built with Laravel, Python, and Flutter.
+        </>,
+        <>
+          Design & editing: brand assets, mockups, and banners, plus photo and
+          video editing with the Adobe suite, CorelDRAW, Canva, and CapCut.
+        </>,
+        <>
+          Photography & videography: product shoots, pre-wedding, events, and
+          travel — helping brands and individuals tell their story.
+        </>,
+      ],
+    },
+  ],
 };
 
 const gallery = {
   label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
+  title: "Gallery",
+  description: `A collection of work and documentation by ${person.name}`,
   // Images from https://pexels.com
   images: [
     {
@@ -363,4 +360,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, experience, gallery };

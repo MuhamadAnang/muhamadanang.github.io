@@ -7,7 +7,7 @@ import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
 import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
-import { person, home, about, blog, work, gallery } from "@/app/resources/content";
+import { person, home, about, experience, gallery } from "@/app/resources/content";
 
 type TimeDisplayProps = {
   timeZone: string;
@@ -59,7 +59,7 @@ export const Header = () => {
         horizontal="center"
       >
         <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s">
-          {display.location && <Flex hide="s">{person.location}</Flex>}
+          {display.location && <Flex hide="s">{person.locationLabel}</Flex>}
         </Flex>
         <Flex fillWidth horizontal="center">
           <Flex
@@ -72,7 +72,7 @@ export const Header = () => {
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s">
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/" || pathname === ""} />
               )}
               <Line vert maxHeight="24" />
               {routes["/about"] && (
@@ -82,47 +82,30 @@ export const Header = () => {
                     prefixIcon="person"
                     href="/about"
                     label={about.label}
-                    selected={pathname === "/about"}
+                    selected={pathname.startsWith("/about")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
                     href="/about"
-                    selected={pathname === "/about"}
+                    selected={pathname.startsWith("/about")}
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {routes["/experience"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    href="/experience"
+                    label={experience.label}
+                    selected={pathname.startsWith("/experience")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
-                  />
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <ToggleButton
-                    className="s-flex-hide"
-                    prefixIcon="book"
-                    href="/blog"
-                    label={blog.label}
-                    selected={pathname.startsWith("/blog")}
-                  />
-                  <ToggleButton
-                    className="s-flex-show"
-                    prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
+                    href="/experience"
+                    selected={pathname.startsWith("/experience")}
                   />
                 </>
               )}

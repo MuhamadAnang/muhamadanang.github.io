@@ -3,8 +3,7 @@ const baseURL = "muhamadanang.github.io";
 const routes = {
   "/": true,
   "/about": true,
-  "/work": true,
-  "/blog": true,
+  "/experience": true,
   "/gallery": true,
 };
 
