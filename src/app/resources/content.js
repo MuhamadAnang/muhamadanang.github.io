@@ -133,11 +133,16 @@ const about = {
     institutions: [
       {
         name: "State Polytechnic of Malang",
-        description: <>Studied Informatics Engineering.</>,
+        description: <>Bachelor of Applied Science in Information Technology with a GPA of 3.84/4.00. Participated in the Web Design Competition at Techomfest, Politeknik Negeri Semarang, and the East Java Technology Innovation Competition (INOTEK Award) 2024.
+</>,
       },
       {
-        name: "Workshop Riset Informatika",
-        description: <>Research training in the field of informatics.</>,
+        name: "MAN 3 Blitar",
+        description: <>Science major graduate with experience participating in photography and research competitions, including the Photography Competition at the Grand Opening of Blitar Park 2019 and the Madrasah Young Researcher Super Camp (MYRES) 2020.</>,
+      },
+      {
+        name: "Pondok Pesantren Terpadu Al Kamal",
+        description: <>Completed Jurumiyah–Imrithi studies in 2022 at Pondok Pesantren Terpadu Al Kamal Blitar. Participated in the Santri Kreatif Film Blitar Raya and Pesantren Creative Forum (FKPP) Short Film HSN programs.</>,
       },
       // TODO: add your senior high school / any other education here.
     ],
@@ -150,18 +155,24 @@ const about = {
     // don't need, or set display: false above to hide this whole section.
     items: [
       {
-        name: "TODO — organization name",
-        role: "TODO — your position (e.g. Head of Division)",
-        timeframe: "20XX – 20XX",
+        name: "Workshop Riset Informatika",
+        role: "UI/UX Designer & Committee Member",
+        timeframe: "2022 – 2025",
         description: (
-          <>TODO — what you were responsible for and what you led.</>
+          <>Served as a Committee Member for Early Access 2023/2024 and Hacktoberfest 2023, contributing to the planning and execution of organizational events and activities.</>
         ),
       },
       {
-        name: "TODO — committee / event",
-        role: "TODO — your role on the committee",
-        timeframe: "20XX",
-        description: <>TODO — the program you took part in and your contribution.</>,
+        name: "Ikatan Mahasiswa POLINEMA Tulungagung",
+        role: "Communication & Information Division,",
+        timeframe: "2022-2024",
+        description: <>Served in the Communication & Information Division of Ikatan Mahasiswa Polinema Tulungagung and contributed as a Committee Member for Student Welcoming (Samba) 2023 and 2024.</>,
+      },
+      {
+        name: "Lembaga Pers Mahasiswa (LPM) Kompoen POLINEMA",
+        role: "Public Relations Division",
+        timeframe: "2022-2023",
+        description: <>Served as a Committee Member for Institutional Expo 2023 and General Assembly 2023, contributing to the preparation and execution of organizational events.</>,
       },
     ],
   },
@@ -170,7 +181,7 @@ const about = {
     title: "Technical skills",
     skills: [
       {
-        title: "React & Next.js",
+        title: "React Js & Vue js",
         description: (
           <>Building responsive, accessible front-ends and turning UI/UX designs into production interfaces.</>
         ),
@@ -197,7 +208,7 @@ const about = {
         images: [],
       },
       {
-        title: "Lightroom, Photoshop & CorelDRAW",
+        title: "Lightroom, Photoshop, CorelDRAW, & Canva",
         description: <>Photo retouching, color grading, and graphic assets — banners, mockups, and brand kits.</>,
         images: [],
       },
@@ -260,7 +271,7 @@ const experience = {
       ],
     },
     {
-      company: "Freelance",
+      company: "Freelance Hikaf Media",
       role: "Software Developer · Designer · Video Editor · Photo / Videographer",
       timeframe: "2018 – Present",
       achievements: [
