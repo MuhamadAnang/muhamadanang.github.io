@@ -95,13 +95,15 @@ const home = {
   title: `${person.name}'s Portfolio`,
   description:
     "Portfolio of Muhamad Anang — a creative technologist based in Malang, East Java, Indonesia, working across web & mobile development, UI/UX design, and photo / video production.",
-  headline: <>Creative Technologist — building products & telling visual stories</>,
+  headline: (
+    <>Creative Technologist — building products & telling visual stories</>
+  ),
   subline: (
     <>
-      I'm Anang, based in Malang, East Java, Indonesia. I sit at the intersection
-      of technology and creative production: shipping web & mobile products,
-      designing the interfaces people use, and producing the photo, video, and
-      brand content behind them.
+      I'm Anang, based in Malang, East Java, Indonesia. I sit at the
+      intersection of technology and creative production: shipping web & mobile
+      products, designing the interfaces people use, and producing the photo,
+      video, and brand content behind them.
     </>
   ),
   // Short bullet points shown under the intro on the home page — the fast scan.
@@ -117,7 +119,12 @@ const home = {
     {
       category: "Development",
       icon: "grid",
-      items: ["Web Development", "Mobile Development (Flutter)", "React / Next.js", "Laravel"],
+      items: [
+        "Web Development",
+        "Mobile Development (Flutter)",
+        "React / Next.js",
+        "Laravel",
+      ],
     },
     {
       category: "Design",
@@ -127,7 +134,12 @@ const home = {
     {
       category: "Creative & Media",
       icon: "gallery",
-      items: ["Photography", "Videography", "Video Editing", "Content Creation"],
+      items: [
+        "Photography",
+        "Videography",
+        "Video Editing",
+        "Content Creation",
+      ],
     },
     {
       category: "Leadership",
@@ -150,7 +162,8 @@ const home = {
   // /public/images and update the `src` paths below.
   showcase: {
     title: "Selected work",
-    subtitle: "A mix of software, design, and creative production — see the full archive on Drive for more.",
+    subtitle:
+      "A mix of software, design, and creative production — see the full archive on Drive for more.",
     images: [
       {
         src: "/images/projects/wms2.png",
@@ -222,10 +235,10 @@ const about = {
         Indonesia. I started out in web development, grew into a fullstack role
         with Laravel, and now focus on front-end engineering with React and
         Next.js. Along the way I also picked up mobile development with Flutter.
-        My interest in the creative digital industry led me to graphic design and
-        photo / video editing, and traveling turned photography and videography
-        into a serious craft. Today I combine all of this into the freelance
-        services I offer.
+        My interest in the creative digital industry led me to graphic design
+        and photo / video editing, and traveling turned photography and
+        videography into a serious craft. Today I combine all of this into the
+        freelance services I offer.
       </>
     ),
   },
@@ -234,17 +247,47 @@ const about = {
     title: "Studies",
     institutions: [
       {
+        name: "Coursera (University of California, Davis) ",
+        description: (
+          <>
+            Developing SEO skills through competitive analysis, brand presence
+            evaluation, and technical SEO practices such as sitemaps,
+            robots.txt, redirects, and website error management.
+          </>
+        ),
+      },
+      {
         name: "State Polytechnic of Malang",
-        description: <>Bachelor of Applied Science in Information Technology with a GPA of 3.84/4.00. Participated in the Web Design Competition at Techomfest, Politeknik Negeri Semarang, and the East Java Technology Innovation Competition (INOTEK Award) 2024.
-</>,
+        description: (
+          <>
+            Bachelor of Applied Science in Information Technology with a GPA of
+            3.84/4.00. Participated in the Web Design Competition at Techomfest,
+            Politeknik Negeri Semarang, and the East Java Technology Innovation
+            Competition (INOTEK Award) 2024.
+          </>
+        ),
       },
       {
         name: "MAN 3 Blitar",
-        description: <>Science major graduate with experience participating in photography and research competitions, including the Photography Competition at the Grand Opening of Blitar Park 2019 and the Madrasah Young Researcher Super Camp (MYRES) 2020.</>,
+        description: (
+          <>
+            Science major graduate with experience participating in photography
+            and research competitions, including the Photography Competition at
+            the Grand Opening of Blitar Park 2019 and the Madrasah Young
+            Researcher Super Camp (MYRES) 2020.
+          </>
+        ),
       },
       {
         name: "Pondok Pesantren Terpadu Al Kamal",
-        description: <>Completed Jurumiyah–Imrithi studies in 2022 at Pondok Pesantren Terpadu Al Kamal Blitar. Participated in the Santri Kreatif Film Blitar Raya and Pesantren Creative Forum (FKPP) Short Film HSN programs.</>,
+        description: (
+          <>
+            Completed Jurumiyah–Imrithi studies in 2022 at Pondok Pesantren
+            Terpadu Al Kamal Blitar. Participated in the Santri Kreatif Film
+            Blitar Raya and Pesantren Creative Forum (FKPP) Short Film HSN
+            programs.
+          </>
+        ),
       },
       // TODO: add your senior high school / any other education here.
     ],
@@ -261,20 +304,36 @@ const about = {
         role: "UI/UX Designer & Committee Member",
         timeframe: "2022 – 2025",
         description: (
-          <>Served as a Committee Member for Early Access 2023/2024 and Hacktoberfest 2023, contributing to the planning and execution of organizational events and activities.</>
+          <>
+            Served as a Committee Member for Early Access 2023/2024 and
+            Hacktoberfest 2023, contributing to the planning and execution of
+            organizational events and activities.
+          </>
         ),
       },
       {
         name: "Ikatan Mahasiswa POLINEMA Tulungagung",
         role: "Communication & Information Division,",
         timeframe: "2022-2024",
-        description: <>Served in the Communication & Information Division of Ikatan Mahasiswa Polinema Tulungagung and contributed as a Committee Member for Student Welcoming (Samba) 2023 and 2024.</>,
+        description: (
+          <>
+            Served in the Communication & Information Division of Ikatan
+            Mahasiswa Polinema Tulungagung and contributed as a Committee Member
+            for Student Welcoming (Samba) 2023 and 2024.
+          </>
+        ),
       },
       {
         name: "Lembaga Pers Mahasiswa (LPM) Kompoen POLINEMA",
         role: "Public Relations Division",
         timeframe: "2022-2023",
-        description: <>Served as a Committee Member for Institutional Expo 2023 and General Assembly 2023, contributing to the preparation and execution of organizational events.</>,
+        description: (
+          <>
+            Served as a Committee Member for Institutional Expo 2023 and General
+            Assembly 2023, contributing to the preparation and execution of
+            organizational events.
+          </>
+        ),
       },
     ],
   },
@@ -285,33 +344,60 @@ const about = {
       {
         title: "React Js & Vue js",
         description: (
-          <>Building responsive, accessible front-ends and turning UI/UX designs into production interfaces.</>
+          <>
+            Building responsive, accessible front-ends and turning UI/UX designs
+            into production interfaces.
+          </>
         ),
         images: [],
       },
       {
         title: "Laravel",
-        description: <>Designing and building fullstack web apps and management systems with PHP / Laravel.</>,
+        description: (
+          <>
+            Designing and building fullstack web apps and management systems
+            with PHP / Laravel.
+          </>
+        ),
         images: [],
       },
       {
         title: "Flutter",
-        description: <>Cross-platform mobile apps, including projects with machine learning and face recognition.</>,
+        description: (
+          <>
+            Cross-platform mobile apps, including projects with machine learning
+            and face recognition.
+          </>
+        ),
         images: [],
       },
       {
         title: "Figma",
-        description: <>UI/UX design and prototyping, from wireframes to handoff-ready screens.</>,
+        description: (
+          <>
+            UI/UX design and prototyping, from wireframes to handoff-ready
+            screens.
+          </>
+        ),
         images: [],
       },
       {
         title: "Adobe Premiere Pro & CapCut",
-        description: <>Video editing for brand content, events, travel, and social media.</>,
+        description: (
+          <>
+            Video editing for brand content, events, travel, and social media.
+          </>
+        ),
         images: [],
       },
       {
         title: "Lightroom, Photoshop, CorelDRAW, & Canva",
-        description: <>Photo retouching, color grading, and graphic assets — banners, mockups, and brand kits.</>,
+        description: (
+          <>
+            Photo retouching, color grading, and graphic assets — banners,
+            mockups, and brand kits.
+          </>
+        ),
         images: [],
       },
     ],
@@ -334,8 +420,8 @@ const experience = {
       linkLabel: "sinvitrixlabs.biz.id",
       achievements: [
         <>
-          Build and ship product features across the stack with a strong focus on
-          the front-end, using React and Next.js.
+          Build and ship product features across the stack with a strong focus
+          on the front-end, using React and Next.js.
         </>,
         <>
           Translate UI/UX designs into responsive, accessible interfaces and
@@ -378,8 +464,8 @@ const experience = {
       timeframe: "2018 – Present",
       achievements: [
         <>
-          Software development: web profiles, management systems, and mobile apps
-          built with Laravel, Python, and Flutter.
+          Software development: web profiles, management systems, and mobile
+          apps built with Laravel, Python, and Flutter.
         </>,
         <>
           Design & editing: brand assets, mockups, and banners, plus photo and
@@ -410,7 +496,7 @@ const gallery = {
       alt: "image",
       orientation: "horizontal",
     },
-    
+
     {
       src: "/images/gallery/pict3.jpg",
       alt: "image",
