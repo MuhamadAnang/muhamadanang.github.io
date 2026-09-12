@@ -1,0 +1,93 @@
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+.heroCopy {
+    position: relative;
+    z-index: 1;
+    flex: 1 1 0;
+}
+
+.heroPortrait {
+    position: relative;
+    flex: 0 1 360px;
+    min-width: 280px;
+    overflow: hidden;
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: var(--radius-l);
+    box-shadow: 0 24px 70px var(--brand-alpha-weak);
+    background: linear-gradient(145deg, var(--brand-solid-strong), var(--accent-solid-strong));
+}
+
+.heroPortrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(90deg, var(--page-background), transparent 38%),
+        linear-gradient(180deg, transparent 55%, var(--page-background));
+    opacity: 0.78;
+    mix-blend-mode: multiply;
+}
+
+.skillsSection {
+    align-items: center;
+}
+
+.skillsPortrait {
+    position: relative;
+    flex: 0 1 320px;
+    min-width: 240px;
+    overflow: hidden;
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: var(--radius-l);
+    box-shadow: 0 20px 60px var(--brand-alpha-weak);
+    background: linear-gradient(145deg, var(--brand-solid-strong), var(--accent-solid-strong));
+}
+
+.skillsPortrait::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent 55%, var(--page-background));
+    opacity: 0.42;
+    mix-blend-mode: multiply;
+}
+
+.skillsCopy {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+@media (--s) {
+    .hero {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .heroCopy {
+        max-width: none;
+    }
+
+    .heroPortrait {
+        width: 100%;
+        max-width: 420px;
+        min-width: 0;
+        align-self: center;
+    }
+
+    .skillsSection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .skillsPortrait {
+        width: 100%;
+        max-width: 360px;
+        min-width: 0;
+        align-self: center;
+    }
+}

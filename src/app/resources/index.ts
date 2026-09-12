@@ -11,6 +11,10 @@ export {
 export {
   person,
   social,
+  socialMore,
+  socialCreative,
+  socialHobby,
+  portfolioDrive,
   home,
   about,
   experience,

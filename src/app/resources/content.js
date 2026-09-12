@@ -6,8 +6,8 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Software Developer",
-  avatar: "/images/profile.webp",
+  role: "Creative Technologist",
+  avatar: "/images/me-cakep.png",
   // IANA time zone identifier — used for the clock in the header.
   location: "Asia/Jakarta",
   // Human-readable location shown around the site.
@@ -15,18 +15,27 @@ const person = {
   languages: ["English", "Bahasa Indonesia"],
 };
 
+// Primary channels — proof of professionalism, shown everywhere (footer, about, header CTAs).
 const social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
+  {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://linkedin.com/in/maafin",
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://www.instagram.com/m.anang_faqih/",
+  },
+  {
+    name: "YouTube",
+    icon: "youtube",
+    link: "https://www.youtube.com/@m.anang_faqih",
+  },
   {
     name: "GitHub",
     icon: "github",
     link: "https://github.com/MuhamadAnang",
-  },
-  {
-    name: "LinkedIn",
-    icon: "linkedin",
-    link: "https://www.linkedin.com/in/maafin/",
   },
   {
     name: "Email",
@@ -35,61 +44,154 @@ const social = [
   },
 ];
 
+// Secondary — personal channel with more raw / behind-the-scenes creative content.
+const socialMore = [
+  {
+    name: "TikTok",
+    icon: "tiktok",
+    link: "https://www.tiktok.com/@m.anang_faqihhh",
+  },
+];
+
+// Creative & business brands — proof of work published off-site, not personal accounts.
+const socialCreative = [
+  {
+    name: "Hikaf",
+    icon: "instagram",
+    link: "https://www.instagram.com/hikaf.aja/",
+  },
+  {
+    name: "Sinvitrix Labs",
+    icon: "instagram",
+    link: "https://www.instagram.com/sinvitrixlabs_/",
+  },
+  {
+    name: "VimiTech",
+    icon: "instagram",
+    link: "https://www.instagram.com/vimitech.dev/",
+  },
+  {
+    name: "SinviMalaptop",
+    icon: "instagram",
+    link: "https://www.instagram.com/sinvimalaptop_/",
+  },
+];
+
+// Lowest priority — hobby content, kept for transparency but not pushed.
+const socialHobby = [
+  {
+    name: "Motor / Riding (TikTok)",
+    icon: "tiktok",
+    link: "https://www.tiktok.com/@_vaqih",
+  },
+];
+
+// Full, unpublished portfolio archive.
+const portfolioDrive =
+  "https://drive.google.com/drive/folders/1GC4Vh6hhy7ugf3DLhbarAVdWHxNtVCUA?usp=drive_link";
+
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description:
-    "Portfolio of Muhamad Anang — software developer, photographer / videographer, and video editor based in Malang, East Java, Indonesia.",
-  headline: <>Software developer, photographer & video editor</>,
+    "Portfolio of Muhamad Anang — a creative technologist based in Malang, East Java, Indonesia, working across web & mobile development, UI/UX design, and photo / video production.",
+  headline: <>Creative Technologist — building products & telling visual stories</>,
   subline: (
     <>
-      I'm Anang, a software developer based in Malang, East Java, Indonesia.
-      Alongside building software, I freelance as a photographer / videographer
-      and a video editor — bringing ideas to life both in code and on screen.
+      I'm Anang, based in Malang, East Java, Indonesia. I sit at the intersection
+      of technology and creative production: shipping web & mobile products,
+      designing the interfaces people use, and producing the photo, video, and
+      brand content behind them.
     </>
   ),
-  // Short bullet points shown under the intro on the home page.
+  // Short bullet points shown under the intro on the home page — the fast scan.
   highlights: [
-    "Fullstack developer, front-end oriented (React / Next.js)",
-    "Freelance photographer & videographer",
-    "Video editor & creative content creator",
-    "Based in Malang, East Java, Indonesia",
+    "Web & Mobile Development — React, Next.js, Laravel, Flutter",
+    "UI/UX & Product Design — Figma, from wireframe to handoff",
+    "Photography, Videography & Video Editing for brands and events",
+    "Graphic Design & Content Creation across social platforms",
+    "Mentoring — UI/UX committee & community roles since 2022",
   ],
+  // Grouped skills so HR can scan "what can this person do" in seconds.
+  skillGroups: [
+    {
+      category: "Development",
+      icon: "grid",
+      items: ["Web Development", "Mobile Development (Flutter)", "React / Next.js", "Laravel"],
+    },
+    {
+      category: "Design",
+      icon: "person",
+      items: ["UI/UX & Product Design", "Graphic Design", "Figma Prototyping"],
+    },
+    {
+      category: "Creative & Media",
+      icon: "gallery",
+      items: ["Photography", "Videography", "Video Editing", "Content Creation"],
+    },
+    {
+      category: "Leadership",
+      icon: "check",
+      items: ["Mentoring", "Community & Event Organizing"],
+    },
+  ],
+  cta: {
+    primaryLabel: "See selected work",
+    primaryHref: "#work",
+    driveLabel: "Full portfolio archive",
+    driveHref: portfolioDrive,
+    cvLabel: "View CV",
+    cvHref:
+      "https://drive.google.com/file/d/1GrcI2vgTzPmDD1B0oO9hvAPRA4iQqUHK/view?usp=drive_link",
+  },
   // Documentation strip on the home page.
   // TODO: replace these with your own photos (programming, speaking as a
   // presenter, client meetings, photography results, ...). Drop the files in
   // /public/images and update the `src` paths below.
   showcase: {
-    title: "Moments from my work",
+    title: "Selected work",
+    subtitle: "A mix of software, design, and creative production — see the full archive on Drive for more.",
     images: [
       {
-        src: "/images/gallery/RW.webp",
-        alt: "Building a software project",
-        orientation: "horizontal",
-      },
-      {
         src: "/images/projects/wms2.png",
-        alt: "Speaking as a presenter at an event",
+        alt: "Warehouse Management System interface",
+        title: "Warehouse Management System",
+        category: "Web Development",
         orientation: "horizontal",
       },
       {
         src: "/images/projects/acp.png",
-        alt: "In a meeting with a client",
+        alt: "Client project interface",
+        title: "Client Web Platform",
+        category: "Web Development",
+        orientation: "horizontal",
+      },
+      {
+        src: "/images/gallery/RW.webp",
+        alt: "Working on a software project",
+        title: "Building & Shipping Software",
+        category: "Development",
         orientation: "horizontal",
       },
       {
         src: "/images/gallery/pict1.jpg",
         alt: "Photography work",
+        title: "Portrait & Event Photography",
+        category: "Photography",
         orientation: "vertical",
       },
       {
         src: "/images/gallery/img-06.jpg",
         alt: "Photography work",
+        title: "Travel & Location Photography",
+        category: "Photography",
         orientation: "vertical",
       },
       {
         src: "/images/gallery/img-09.png",
         alt: "Videography on location",
+        title: "Videography on Location",
+        category: "Videography",
         orientation: "horizontal",
       },
     ],
@@ -342,4 +444,15 @@ const gallery = {
   ],
 };
 
-export { person, social, home, about, experience, gallery };
+export {
+  person,
+  social,
+  socialMore,
+  socialCreative,
+  socialHobby,
+  portfolioDrive,
+  home,
+  about,
+  experience,
+  gallery,
+};
