@@ -364,7 +364,7 @@ const experience = {
     {
       company: "UD & Percetakan LKS",
       role: "Warehouse Staff",
-      timeframe: "20XX – 20XX",
+      timeframe: "2017 – 2025",
       achievements: [
         <>
           Handled stock management, incoming and outgoing goods, and day-to-day
@@ -437,7 +437,7 @@ const gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/pict10.jpg",
+      src: "/images/gallery/pict10.JPG",
       alt: "image",
       orientation: "vertical",
     },
