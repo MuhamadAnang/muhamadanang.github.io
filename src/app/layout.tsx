@@ -36,6 +36,9 @@ export async function generateMetadata() {
         "max-snippet": -1,
       },
     },
+    verification: {
+      google: "kXjMH26c7v_Joj9UvsBg4IpoBpYkQrBqKa9AK7tZilY",
+    },
   };
 }
 
