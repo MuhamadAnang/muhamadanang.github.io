@@ -18,5 +18,6 @@ export {
   home,
   about,
   experience,
+  projects,
   gallery,
 } from "@/app/resources/content";

@@ -1,8 +1,10 @@
 import React from "react";
+import Link from "next/link";
 
 import {
   Avatar,
   Button,
+  Card,
   Column,
   Flex,
   Heading,
@@ -110,6 +112,35 @@ export default function Home() {
           />
         </Column>
       </Flex>
+
+      <RevealFx translateY="16" delay={0.35} fillWidth>
+        <Column fillWidth gap="m">
+          <Column gap="4">
+            <Heading as="h2" variant="display-strong-xs" wrap="balance">
+              {home.exploreWork.title}
+            </Heading>
+            <Text variant="body-default-m" onBackground="neutral-weak">
+              {home.exploreWork.subtitle}
+            </Text>
+          </Column>
+          <Flex fillWidth wrap gap="12">
+            {home.exploreWork.items.map((item) => (
+              <Link key={item.label} href={item.href} style={{ textDecoration: "none", color: "inherit" }}>
+                <Card
+                  padding="16"
+                  radius="m"
+                  gap="8"
+                  vertical="center"
+                  style={{ flex: "1 1 200px" }}
+                >
+                  <Icon name={item.icon} onBackground="brand-weak" />
+                  <Text variant="label-strong-s">{item.label}</Text>
+                </Card>
+              </Link>
+            ))}
+          </Flex>
+        </Column>
+      </RevealFx>
 
       <RevealFx translateY="16" delay={0.4} fillWidth>
         <Flex className={styles.skillsSection} fillWidth gap="xl" vertical="center">

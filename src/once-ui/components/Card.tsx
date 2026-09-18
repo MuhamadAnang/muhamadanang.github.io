@@ -1,6 +1,7 @@
 "use client";
 
 import React, { forwardRef } from "react";
+import classNames from "classnames";
 import { Flex } from ".";
 import styles from "./Card.module.scss";
 
@@ -17,7 +18,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
         transition="macro-medium"
         border="neutral-medium"
         cursor="interactive"
-        className={styles.card}
+        className={classNames(styles.card, className)}
+        style={style}
         {...rest}
       >
         {children}

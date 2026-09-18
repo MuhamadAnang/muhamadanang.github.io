@@ -35,3 +35,9 @@ One-time setup: **Repository → Settings → Pages → Build and deployment →
 - Server-only features from the original template were removed: the `/api` password
   routes, the on-demand `/og` image route, and the password gate in `RouteGuard`.
 - Content and configuration live in `src/app/resources/`.
+
+## Managing content
+
+See [`CONTENT_GUIDE.md`](CONTENT_GUIDE.md) for how to add a new project, add
+a gallery photo/video, tag it with a category, and change the homepage
+shortcut buttons — all without touching component code.

@@ -1,14 +1,28 @@
 .masonryGrid {
-    display: flex;
-    margin-left: calc(-1 * var(--static-space-16));
+    column-count: 4;
+    column-gap: var(--static-space-16);
     width: 100%;
 }
 
-.masonryGridColumn {
-    padding-left: var(--static-space-16);
-    background-clip: padding-box;
+@media (max-width: 1440px) {
+    .masonryGrid {
+        column-count: 3;
+    }
 }
 
-.gridItem {
+@media (max-width: 1024px) {
+    .masonryGrid {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 560px) {
+    .masonryGrid {
+        column-count: 1;
+    }
+}
+
+.masonryGridItem {
+    break-inside: avoid;
     margin-bottom: var(--static-space-16);
 }

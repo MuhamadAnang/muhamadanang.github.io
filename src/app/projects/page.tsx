@@ -1,13 +1,12 @@
 import { Suspense } from "react";
 import { Column, Heading, Text } from "@/once-ui/components";
-import GalleryClient from "@/components/gallery/GalleryClient";
-import type { GalleryImage } from "@/components/gallery/MasonryGrid";
+import ProjectsClient from "@/components/projects/ProjectsClient";
 import { baseURL } from "@/app/resources";
-import { gallery, person } from "@/app/resources/content";
+import { projects, person } from "@/app/resources/content";
 
 export async function generateMetadata() {
-  const title = gallery.title;
-  const description = gallery.description;
+  const title = projects.title;
+  const description = projects.description;
   const ogImage = `https://${baseURL}/images/cover.png`;
 
   return {
@@ -17,7 +16,7 @@ export async function generateMetadata() {
       title,
       description,
       type: "website",
-      url: `https://${baseURL}/gallery`,
+      url: `https://${baseURL}/projects`,
       images: [
         {
           url: ogImage,
@@ -34,9 +33,7 @@ export async function generateMetadata() {
   };
 }
 
-export default function Gallery() {
-  const images = gallery.images as GalleryImage[];
-
+export default function Projects() {
   return (
     <Column fillWidth gap="24">
       <script
@@ -45,36 +42,27 @@ export default function Gallery() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ImageGallery",
-            name: gallery.title,
-            description: gallery.description,
-            url: `https://${baseURL}/gallery`,
-            image: images.map((image) => ({
-              "@type": "ImageObject",
-              url: `${baseURL}${image.src}`,
-              description: image.alt,
-            })),
+            "@type": "CollectionPage",
+            name: projects.title,
+            description: projects.description,
+            url: `https://${baseURL}/projects`,
             author: {
               "@type": "Person",
               name: person.name,
-              image: {
-                "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
-              },
             },
           }),
         }}
       />
       <Column gap="4">
         <Heading as="h1" variant="display-strong-xs" wrap="balance">
-          {gallery.title}
+          {projects.title}
         </Heading>
         <Text variant="body-default-m" onBackground="neutral-weak">
-          {gallery.description}
+          {projects.description}
         </Text>
       </Column>
       <Suspense>
-        <GalleryClient images={images} categories={gallery.categories} />
+        <ProjectsClient items={projects.items} categories={projects.categories} />
       </Suspense>
     </Column>
   );

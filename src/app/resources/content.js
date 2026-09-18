@@ -90,6 +90,22 @@ const socialHobby = [
 const portfolioDrive =
   "https://drive.google.com/drive/folders/1GC4Vh6hhy7ugf3DLhbarAVdWHxNtVCUA?usp=drive_link";
 
+// Shared category taxonomy — used to power the tab filters on /projects and
+// /gallery, and the "explore my work" shortcut buttons on the home page.
+// `id` is the URL-safe value used in links like /gallery?category=photography
+// and as the filter tab value; `label` is what's shown on screen.
+const projectCategories = [
+  { id: "software-development", label: "Software Development" },
+  { id: "ui-ux-design", label: "UI/UX Design" },
+];
+
+const galleryCategories = [
+  { id: "photography", label: "Photography" },
+  { id: "videography", label: "Videography" },
+  { id: "graphic-design", label: "Graphic Design" },
+  { id: "content-creation", label: "Content Creation" },
+];
+
 const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
@@ -156,6 +172,48 @@ const home = {
     cvHref:
       "https://drive.google.com/file/d/1GrcI2vgTzPmDD1B0oO9hvAPRA4iQqUHK/view?usp=drive_link",
   },
+  // Shortcut buttons shown right under the hero so a visitor who's only
+  // interested in one field (e.g. an HR person hiring for UI/UX) can jump
+  // straight to the relevant portfolio page instead of scrolling everything.
+  // `href` combines the target page with a `?category=` query param that the
+  // /projects and /gallery pages read to pre-select the matching tab.
+  exploreWork: {
+    title: "Jump to what you're looking for",
+    subtitle:
+      "I work across a few different fields — pick one to see that work only.",
+    items: [
+      {
+        label: "Software Development",
+        icon: "code",
+        href: "/projects?category=software-development",
+      },
+      {
+        label: "UI/UX Design",
+        icon: "person",
+        href: "/projects?category=ui-ux-design",
+      },
+      {
+        label: "Photography",
+        icon: "gallery",
+        href: "/gallery?category=photography",
+      },
+      {
+        label: "Videography",
+        icon: "gallery",
+        href: "/gallery?category=videography",
+      },
+      {
+        label: "Graphic Design",
+        icon: "grid",
+        href: "/gallery?category=graphic-design",
+      },
+      {
+        label: "Content Creation",
+        icon: "gallery",
+        href: "/gallery?category=content-creation",
+      },
+    ],
+  },
   // Documentation strip on the home page.
   // TODO: replace these with your own photos (programming, speaking as a
   // presenter, client meetings, photography results, ...). Drop the files in
@@ -189,15 +247,15 @@ const home = {
       {
         src: "/images/gallery/pict1.jpg",
         alt: "Photography work",
-        title: "Portrait & Event Photography",
+        title: "Graduation Photography",
         category: "Photography",
         orientation: "vertical",
       },
       {
         src: "/images/gallery/img-06.jpg",
         alt: "Photography work",
-        title: "Travel & Location Photography",
-        category: "Photography",
+        title: "Content Details & Documentation",
+        category: "Content-Creation",
         orientation: "vertical",
       },
       {
@@ -480,53 +538,549 @@ const experience = {
   ],
 };
 
+// Case-study style work: software builds and UI/UX design.
+// To add a project: drop its cover image in /public/images/projects and add
+// an entry below with a `categories` array — one or more ids from
+// `projectCategories` above (currently "software-development" and/or
+// "ui-ux-design"). A project that belongs to more than one field (e.g. an
+// app you both built and designed) lists all of them, so it shows up under
+// every matching tab instead of needing a duplicate entry per category.
+const projects = {
+  label: "Projects",
+  title: "Projects",
+  description: `Software & UI/UX work by ${person.name}`,
+  categories: projectCategories,
+  items: [
+    {
+      title: "Warehouse Management System",
+      categories: ["software-development"],
+      timeframe: "2026",
+      description: (
+        <>
+          Internal system for managing stock, incoming/outgoing goods, and
+          warehouse operations, replacing manual, paper-based tracking.
+        </>
+      ),
+      tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
+      image: "/images/projects/wms2.png",
+    },
+    {
+      title: "ACP - ERP System",
+      categories: ["software-development"],
+      timeframe: "2026",
+      description: (
+        <>
+          Fullstack web platform built for a client, from UI/UX handoff to a
+          production-ready, responsive front-end.
+        </>
+      ),
+      tools: ["React", "JavaScript", "Laravel", "PostgreSQL"],
+      image: "/images/projects/acp.png",
+    },
+    {
+      title: "PIU E-Reporting System",
+      categories: ["software-development"],
+      timeframe: "2025",
+      description: (
+        <>
+          Fullstack web platform built for a client, from UI/UX handoff to a
+          production-ready, responsive front-end.
+        </>
+      ),
+      tools: ["React", "TypeScript", "Express", "PostgreSQL"],
+      image: "/images/projects/piu-e.png",
+    },
+    {
+      // TODO: swap this description for what Scyllax actually is/does.
+      title: "Scyllax",
+      categories: ["software-development"],
+      description: (
+        <>Web project — add a short description of what this does.</>
+      ),
+      tools: ["Vue.Js"],
+      image: "/images/projects/scyllax.png",
+    },
+    // Reference: how to add a new project (also shows a project spanning
+    // more than one category — omit the second id if it's just one field).
+    // {
+    //   title: "Project name",
+    //   categories: ["ui-ux-design", "software-development"],
+    //   timeframe: "2025",
+    //   description: <>What the project was and your role in it.</>,
+    //   tools: ["Figma"],
+    //   image: "/images/projects/your-image.png",
+    //   link: "https://www.figma.com/...",
+    //   linkLabel: "View on Figma",
+    // },
+    {
+      title: "Fest Ticket App",
+      categories: ["software-development", "ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          A ticketing app for events, allowing users to browse events, select
+          seats, and purchase tickets, with face recognition.
+        </>
+      ),
+      tools: ["Figma", "Flutter", "Face Recognition"],
+      image: "/images/projects/fest.webp",
+    },
+    {
+      title: "Fest Ticket App - Admin Panel",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          An admin panel for the Fest Ticket App, providing tools for managing
+          events, users, and ticket sales.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/fest-admin.webp",
+    },
+    {
+      title: "Re-Design Website Kementrian Sekertariat Negara",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          A complete redesign challenge of the official website for the Ministry
+          of National Secretariat, focusing on improving user experience and
+          modernizing the interface.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/kementrian.webp",
+    },
+    {
+      title: "Bio Barter App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: <>Design for an animal waste trading app.</>,
+      tools: ["Figma"],
+      image: "/images/projects/biobarter.webp",
+    },
+    {
+      title: "Cultureeyes App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          App design for CultureEyes, an application offering a single gateway
+          to a nation's entire culture, reated for Techomfest 2023.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/cultureeyes.webp",
+    },
+    {
+      title: "Cultureeyes Web",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          App design for Booking Class, an application that allows users to book
+          and manage class schedules.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/cultureweb.webp",
+    },
+    {
+      title: "Healthy Mindset App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          App design for Healthy Mindset, an application that provides mental
+          health support and resources.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/healthy.webp",
+    },
+    {
+      title: "Booking Class App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>
+          App design for Booking Class, an application that allows users to book
+          and manage class schedules.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/bookingapp.webp",
+    },
+    {
+      title: "Booking Class Web",
+      categories: ["ui-ux-design", "software-development"],
+      timeframe: "2024",
+      description: (
+        <>
+          App design for Booking Class, an application that allows users to book
+          and manage class schedules.
+        </>
+      ),
+      tools: ["Figma", "Laravel"],
+      image: "/images/projects/bookingweb.webp",
+    },
+    {
+      title: "Konsulin Aja App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: (
+        <>App design for Konsulin Aja, a mental health consultation platform.</>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/konsulin.webp",
+    },
+    {
+      title: "Website Management RW",
+      categories: ["ui-ux-design", "software-development"],
+      timeframe: "2024",
+      description: <>Website management for neighborhood unit.</>,
+      tools: ["Figma", "Laravel"],
+      image: "/images/projects/RW.webp",
+    },
+    {
+      title: "RentAza Web & Mobile App",
+      categories: ["ui-ux-design"],
+      timeframe: "2024",
+      description: <>Web and mobile app design for RentAza, a property rental platform.</>,
+      tools: ["Figma", "Laravel"],
+      image: "/images/projects/RentAza.png",
+    },
+  ],
+};
+
+// Photo/video/visual work. To add an image: drop the file in
+// /public/images/gallery and add an entry below with a `category` matching
+// one of `galleryCategories` above (photography, videography, graphic-design,
+// or content-creation) and an `orientation` ("horizontal" or "vertical") so
+// the masonry grid can lay it out correctly.
 const gallery = {
   label: "Gallery",
   title: "Gallery",
   description: `A collection of work and documentation by ${person.name}`,
-  // Images from https://pexels.com
+  categories: galleryCategories,
   images: [
     {
       src: "/images/gallery/pict1.jpg",
-      alt: "image",
+      alt: "Graduation portrait photography",
+      category: "photography",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/img-09.png",
-      alt: "image",
+      alt: "Videography on location",
+      category: "videography",
       orientation: "horizontal",
     },
-
     {
       src: "/images/gallery/pict3.jpg",
-      alt: "image",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/pict2.jpg",
+      alt: "Portrait photography",
+      category: "photography",
       orientation: "vertical",
     },
     {
       src: "/images/gallery/pict5.jpg",
-      alt: "image",
+      alt: "Location photography",
+      category: "photography",
       orientation: "horizontal",
     },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/pict2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
+
     {
       src: "/images/gallery/pict9.png",
-      alt: "image",
+      alt: "Workshop documentation",
+      category: "content-creation",
       orientation: "horizontal",
     },
     {
       src: "/images/gallery/pict10.JPG",
-      alt: "image",
+      alt: "Portrait photography",
+      category: "photography",
       orientation: "vertical",
     },
+    {
+      src: "/images/gallery/Bu Evi - 2.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/bu Endah 1.webp",
+      alt: "documentation of content creation",
+      category: "content-creation",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/img-06.jpg",
+      alt: "Workshop documentation",
+      category: "content-creation",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Bu Astri - 2.webp",
+      alt: "Portrait photography",
+      category: "content-creation",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Bu Astri.webp",
+      alt: "Workshop documentation",
+      category: "content-creation",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Batu Paradise - 1.webp",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Bu Evi.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Bu Hani - 1.webp",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Bu Farida.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Cahaya rasa - 1.webp",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/photo1.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Blitar Park - 3_.jpg",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/photo2.webp",
+      alt: "Workshop documentation",
+      category: "content-creation",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Blitar Park - 6.jpg",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Blitar Park - 2.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Blitar Park - 5.jpg",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Blitar Park - 4.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/Mbak Abril & Mbak Nana - 1.jpg",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril & Mbak Nana - 5.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril & Mbak Nana - 2.jpg",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril & Mbak Nana - 7.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril & Mbak Nana - 8.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril - 1.png",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril - 2.png",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 1.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 2.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Abril - 3.png",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 3.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 4.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 5.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 8.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 7.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 6.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Cindy - 9.jpg",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Elva - 1.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Elva - 2.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Elva - 3.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Elva - 4.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Elva - 5.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Vida - 3.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Vida - 4.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/SMAK Albertus - 1.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/SMAK Albertus - 8.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/SMAK Albertus - 9.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/Mbak Laras - 3.webp",
+      alt: "Workshop documentation",
+      category: "photography",
+      orientation: "vertical",
+    },
+
+    // TODO: no graphic design pieces here yet — add your poster/mockup/brand
+    // asset images with category: "graphic-design" when ready.
   ],
 };
 
@@ -540,5 +1094,6 @@ export {
   home,
   about,
   experience,
+  projects,
   gallery,
 };
