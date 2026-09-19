@@ -557,8 +557,10 @@ const projects = {
       timeframe: "2026",
       description: (
         <>
-          Fullstack web platform built for a client, from UI/UX handoff to a
-          production-ready, responsive front-end.
+          An internal ERP web application built for CV Anugrah Citra Persada, a
+          distribution company. Contributed as a full-stack developer, handling
+          both the front-end interface and back-end logic to support the
+          company's core business operations.
         </>
       ),
       tools: ["React", "JavaScript", "Laravel", "PostgreSQL"],
@@ -570,34 +572,42 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          Fullstack web platform built for a client, from UI/UX handoff to a
-          production-ready, responsive front-end.
+          A reporting platform developed for PT Pupuk Indonesia Utilitas,
+          covering procurement, investment, and other operational reports.
+          Contributed as a front-end developer, building the interface used to
+          log and review data systematically.
         </>
       ),
       tools: ["React", "TypeScript", "Express", "PostgreSQL"],
       image: "/images/projects/piu-e.png",
-    },{
-      title: "Warehouse Management System",
+    },
+    {
+      title: "Bookflow – Warehouse Management System (WMS)",
       categories: ["software-development"],
       timeframe: "2026",
       description: (
         <>
-          Internal system for managing stock, incoming/outgoing goods, and
-          warehouse operations, replacing manual, paper-based tracking.
+          A warehousing platform built for a book distribution company,
+          featuring an intelligent shipment-priority system to streamline order
+          fulfillment. Contributed as a full-stack developer across both
+          front-end and back-end.
         </>
       ),
       tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
       image: "/images/projects/wms2.png",
       link: "https://wms.sinvitrixlabs.biz.id/",
       linkLabel: "View on Website",
-    },{
+    },
+    {
       title: "Frozerify - Management System",
       categories: ["software-development"],
       timeframe: "2026",
       description: (
         <>
-          Internal system for managing stock, incoming/outgoing goods, and
-          warehouse operations, replacing manual, paper-based tracking.
+          A business management platform for frozen food enterprises, built as a
+          certification project for BNSP (Indonesia's National Professional
+          Certification Body). Contributed as a full-stack developer, building
+          the system end-to-end.
         </>
       ),
       tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
@@ -609,8 +619,9 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          Fullstack web platform built for a client, from UI/UX handoff to a
-          production-ready, responsive front-end.
+          A warehousing product website built for a large-scale enterprise
+          client. Contributed as a front-end developer, implementing the
+          interface and ensuring smooth interaction with the underlying system.
         </>
       ),
       tools: ["Vue Js", "TypeScript", "Go Lang", "PostgreSQL"],
@@ -624,8 +635,9 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          Fullstack web platform built for a client, from UI/UX handoff to a
-          production-ready, responsive front-end.
+          A permit management system developed for PT Pupuk Indonesia Utilitas,
+          enabling structured handling and tracking of company permits.
+          Contributed as a front-end developer.
         </>
       ),
       tools: ["React", "JavaScript"],
@@ -649,8 +661,10 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          A ticketing app for events, allowing users to browse events, select
-          seats, and purchase tickets, with face recognition.
+          A ticket-selling platform built as a final-year capstone project,
+          featuring face-recognition technology to help reduce ticket scalping.
+          Contributed as both UI/UX designer and front-end developer, from
+          interface design through implementation.{" "}
         </>
       ),
       tools: ["Figma", "Flutter", "Face Recognition"],
@@ -662,8 +676,9 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          An admin panel for the Fest Ticket App, providing tools for managing
-          events, users, and ticket sales.
+          The companion admin dashboard for the Fest Ticket platform, used to
+          manage ticket listings, transactions, and event data. Part of the same
+          capstone project.
         </>
       ),
       tools: ["Figma"],
@@ -675,9 +690,10 @@ const projects = {
       timeframe: "2025",
       description: (
         <>
-          A complete redesign challenge of the official website for the Ministry
-          of National Secretariat, focusing on improving user experience and
-          modernizing the interface.
+          A UI/UX redesign concept for the official website of Indonesia's
+          Ministry of State Secretariat, created for a design challenge hosted
+          by DOT Indonesia. The goal was to modernize the visual design and
+          improve the overall user experience.
         </>
       ),
       tools: ["Figma"],
@@ -689,8 +705,9 @@ const projects = {
       timeframe: "2024",
       description: (
         <>
-          Fullstack web platform built for a client, from UI/UX handoff to a
-          production-ready, responsive front-end.
+          A company-profile website for a rural bank (BPR), presenting banking
+          information, advertisements, and promotions. Contributed as a
+          front-end developer.
         </>
       ),
       tools: ["Laravel"],
@@ -702,7 +719,13 @@ const projects = {
       title: "Bio Barter App",
       categories: ["ui-ux-design"],
       timeframe: "2024",
-      description: <>Design for an animal waste trading app.</>,
+      description: (
+        <>
+          An app prototype designed for the INOTEK Award 2024 competition,
+          helping livestock owners turn animal waste into a profitable resource.
+          Contributed as UI/UX designer, from concept to interactive prototype.
+        </>
+      ),
       tools: ["Figma"],
       image: "/images/projects/biobarter.webp",
     },
@@ -712,8 +735,8 @@ const projects = {
       timeframe: "2024",
       description: (
         <>
-          App design for CultureEyes, an application offering a single gateway
-          to a nation's entire culture, reated for Techomfest 2023.
+          An app prototype designed to help users discover Indonesia's culture
+          and tourist destinations, created for the Techomfest 2023 competition.
         </>
       ),
       tools: ["Figma"],
@@ -725,8 +748,9 @@ const projects = {
       timeframe: "2024",
       description: (
         <>
-          App design for Booking Class, an application that allows users to book
-          and manage class schedules.
+          The web counterpart of the Cultureyes app, offering the same concept
+          of showcasing Indonesian culture and tourism destinations through a
+          browser-based experience.
         </>
       ),
       tools: ["Figma"],
@@ -738,8 +762,9 @@ const projects = {
       timeframe: "2024",
       description: (
         <>
-          App design for Booking Class, an application that allows users to book
-          and manage class schedules.
+          An app that simplifies classroom booking and makes class-schedule
+          monitoring easier for students and staff. Contributed as both UI/UX
+          designer and front-end developer.
         </>
       ),
       tools: ["Figma"],
@@ -751,8 +776,8 @@ const projects = {
       timeframe: "2024",
       description: (
         <>
-          App design for Booking Class, an application that allows users to book
-          and manage class schedules.
+          The web version of Booking Class, offering the same class-booking and
+          schedule-monitoring functionality through a browser-based interface.
         </>
       ),
       tools: ["Figma", "Laravel"],
@@ -762,7 +787,13 @@ const projects = {
       title: "Website Management RW",
       categories: ["ui-ux-design", "software-development"],
       timeframe: "2024",
-      description: <>Website management for neighborhood unit.</>,
+      description: (
+        <>
+          A system built to help neighborhood-level (RW) administrators manage
+          resident data, schedule community activities, and track communal
+          funds. Contributed as both UI/UX designer and front-end developer.
+        </>
+      ),
       tools: ["Figma", "Laravel"],
       image: "/images/projects/RW.webp",
     },
@@ -770,7 +801,12 @@ const projects = {
       title: "RentAza Web & Mobile App",
       categories: ["ui-ux-design"],
       timeframe: "2024",
-      description: <>Web and mobile app design for RentAza, a property rental platform.</>,
+      description: (
+        <>
+          An app prototype that makes renting and lending vehicles simple and
+          straightforward for everyday users.
+        </>
+      ),
       tools: ["Figma", "Laravel"],
       image: "/images/projects/RentAza.png",
     },
@@ -779,7 +815,10 @@ const projects = {
       categories: ["ui-ux-design"],
       timeframe: "2023",
       description: (
-        <>App design for Konsulin Aja, a mental health consultation platform.</>
+        <>
+          An app prototype designed to make it easier for users to access and
+          consult with psychologists.
+        </>
       ),
       tools: ["Figma"],
       image: "/images/projects/konsulin.webp",
@@ -790,8 +829,8 @@ const projects = {
       timeframe: "2023",
       description: (
         <>
-          App design for Healthy Mindset, an application that provides mental
-          health support and resources.
+          An app prototype designed to help users learn and build a healthier
+          mindset.
         </>
       ),
       tools: ["Figma"],
