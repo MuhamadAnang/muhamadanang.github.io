@@ -552,19 +552,6 @@ const projects = {
   categories: projectCategories,
   items: [
     {
-      title: "Warehouse Management System",
-      categories: ["software-development"],
-      timeframe: "2026",
-      description: (
-        <>
-          Internal system for managing stock, incoming/outgoing goods, and
-          warehouse operations, replacing manual, paper-based tracking.
-        </>
-      ),
-      tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
-      image: "/images/projects/wms2.png",
-    },
-    {
       title: "ACP - ERP System",
       categories: ["software-development"],
       timeframe: "2026",
@@ -589,16 +576,60 @@ const projects = {
       ),
       tools: ["React", "TypeScript", "Express", "PostgreSQL"],
       image: "/images/projects/piu-e.png",
+    },{
+      title: "Warehouse Management System",
+      categories: ["software-development"],
+      timeframe: "2026",
+      description: (
+        <>
+          Internal system for managing stock, incoming/outgoing goods, and
+          warehouse operations, replacing manual, paper-based tracking.
+        </>
+      ),
+      tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
+      image: "/images/projects/wms2.png",
+      link: "https://wms.sinvitrixlabs.biz.id/",
+      linkLabel: "View on Website",
+    },{
+      title: "Frozerify - Management System",
+      categories: ["software-development"],
+      timeframe: "2026",
+      description: (
+        <>
+          Internal system for managing stock, incoming/outgoing goods, and
+          warehouse operations, replacing manual, paper-based tracking.
+        </>
+      ),
+      tools: ["React", "Next.js", "TypeScript", "PostgreSQL"],
+      image: "/images/projects/frozerify.png",
     },
     {
-      // TODO: swap this description for what Scyllax actually is/does.
-      title: "Scyllax",
+      title: "Scylla X",
       categories: ["software-development"],
+      timeframe: "2025",
       description: (
-        <>Web project — add a short description of what this does.</>
+        <>
+          Fullstack web platform built for a client, from UI/UX handoff to a
+          production-ready, responsive front-end.
+        </>
       ),
-      tools: ["Vue.Js"],
+      tools: ["Vue Js", "TypeScript", "Go Lang", "PostgreSQL"],
       image: "/images/projects/scyllax.png",
+      link: "https://scyllax.pratesis.com/",
+      linkLabel: "View on Website",
+    },
+    {
+      title: "SyPIU - Permit System",
+      categories: ["software-development"],
+      timeframe: "2025",
+      description: (
+        <>
+          Fullstack web platform built for a client, from UI/UX handoff to a
+          production-ready, responsive front-end.
+        </>
+      ),
+      tools: ["React", "JavaScript"],
+      image: "/images/projects/sypiu.png",
     },
     // Reference: how to add a new project (also shows a project spanning
     // more than one category — omit the second id if it's just one field).
@@ -615,7 +646,7 @@ const projects = {
     {
       title: "Fest Ticket App",
       categories: ["software-development", "ui-ux-design"],
-      timeframe: "2024",
+      timeframe: "2025",
       description: (
         <>
           A ticketing app for events, allowing users to browse events, select
@@ -628,7 +659,7 @@ const projects = {
     {
       title: "Fest Ticket App - Admin Panel",
       categories: ["ui-ux-design"],
-      timeframe: "2024",
+      timeframe: "2025",
       description: (
         <>
           An admin panel for the Fest Ticket App, providing tools for managing
@@ -641,7 +672,7 @@ const projects = {
     {
       title: "Re-Design Website Kementrian Sekertariat Negara",
       categories: ["ui-ux-design"],
-      timeframe: "2024",
+      timeframe: "2025",
       description: (
         <>
           A complete redesign challenge of the official website for the Ministry
@@ -651,6 +682,21 @@ const projects = {
       ),
       tools: ["Figma"],
       image: "/images/projects/kementrian.webp",
+    },
+    {
+      title: "BPR EKA DANA MANDIRI",
+      categories: ["software-development"],
+      timeframe: "2024",
+      description: (
+        <>
+          Fullstack web platform built for a client, from UI/UX handoff to a
+          production-ready, responsive front-end.
+        </>
+      ),
+      tools: ["Laravel"],
+      image: "/images/projects/edaman.png",
+      link: "https://www.bankekadanamandiri.com/",
+      linkLabel: "View on Website",
     },
     {
       title: "Bio Barter App",
@@ -687,19 +733,6 @@ const projects = {
       image: "/images/projects/cultureweb.webp",
     },
     {
-      title: "Healthy Mindset App",
-      categories: ["ui-ux-design"],
-      timeframe: "2024",
-      description: (
-        <>
-          App design for Healthy Mindset, an application that provides mental
-          health support and resources.
-        </>
-      ),
-      tools: ["Figma"],
-      image: "/images/projects/healthy.webp",
-    },
-    {
       title: "Booking Class App",
       categories: ["ui-ux-design"],
       timeframe: "2024",
@@ -726,16 +759,6 @@ const projects = {
       image: "/images/projects/bookingweb.webp",
     },
     {
-      title: "Konsulin Aja App",
-      categories: ["ui-ux-design"],
-      timeframe: "2024",
-      description: (
-        <>App design for Konsulin Aja, a mental health consultation platform.</>
-      ),
-      tools: ["Figma"],
-      image: "/images/projects/konsulin.webp",
-    },
-    {
       title: "Website Management RW",
       categories: ["ui-ux-design", "software-development"],
       timeframe: "2024",
@@ -750,6 +773,29 @@ const projects = {
       description: <>Web and mobile app design for RentAza, a property rental platform.</>,
       tools: ["Figma", "Laravel"],
       image: "/images/projects/RentAza.png",
+    },
+    {
+      title: "Konsulin Aja App",
+      categories: ["ui-ux-design"],
+      timeframe: "2023",
+      description: (
+        <>App design for Konsulin Aja, a mental health consultation platform.</>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/konsulin.webp",
+    },
+    {
+      title: "Healthy Mindset App",
+      categories: ["ui-ux-design"],
+      timeframe: "2023",
+      description: (
+        <>
+          App design for Healthy Mindset, an application that provides mental
+          health support and resources.
+        </>
+      ),
+      tools: ["Figma"],
+      image: "/images/projects/healthy.webp",
     },
   ],
 };
