@@ -614,6 +614,23 @@ const projects = {
       image: "/images/projects/frozerify.png",
     },
     {
+      title: "Teknik Elektronika POLINEMA - Web Profile",
+      categories: ["software-development"],
+      timeframe: "2025",
+      description: (
+        <>
+          A web profile for the Electronics Engineering program at POLINEMA,
+          showcasing the department's achievements and offerings. Contributed as a
+          front-end developer, building the interface and ensuring a responsive
+          design.
+        </>
+      ),
+      tools: ["WordPress"],
+      image: "/images/projects/webte.png",
+      link: "https://pstepolinema42.wordpress.com/",
+      linkLabel: "View on Website",
+    },
+    {
       title: "Scylla X",
       categories: ["software-development"],
       timeframe: "2025",
@@ -880,7 +897,12 @@ const gallery = {
       category: "photography",
       orientation: "horizontal",
     },
-
+{
+      src: "/images/gallery/Cahaya rasa - 1.webp",
+      alt: "Portrait photography",
+      category: "photography",
+      orientation: "vertical",
+    },
     {
       src: "/images/gallery/pict9.png",
       alt: "Workshop documentation",
@@ -948,7 +970,7 @@ const gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/Cahaya rasa - 1.webp",
+      src: "/images/gallery/vidagrad.PNG",
       alt: "Portrait photography",
       category: "photography",
       orientation: "vertical",
